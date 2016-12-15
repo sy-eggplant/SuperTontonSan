@@ -1,15 +1,17 @@
 -- +migrate Up
-CREATE TABLE `kyuko_data` (
+CREATE TABLE `events` (
 	`id`					int UNSIGNED NOT NULL AUTO_INCREMENT,
+	`title`				int NOT NULL,
+	`budget`			int NOT NULL,
+	`bar` 				varchar(255) NOt NULL,
 	`place` 			int NOT NULL,
-	`week` 				int NOT NULL,
-	`period`			int NOT NULL,
-	`day` 				varchar(255) NOt NULL,
-	`class_name` 	varchar(255) NOT NULL,
-	`instructor` 	varchar(255) NOT NULL,
-	`reason` 			varchar(255) NOT NULL,
+	`start_date` 	varchar(255) NOt NULL,
+	`deadline` 		varchar(255) NOT NULL,
+	`candidate` 	varchar(255) NOT NULL,
+	`comments` 		varchar(255) NOT NULL,
+	`user_id`			int NOT NULL,
 	PRIMARY KEY(`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- +migrate Down
-DROP TABLE kyuko_data;
+DROP TABLE events;
