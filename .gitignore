@@ -1,5 +1,10 @@
 *.swp
+
 cmd/main
 Godeps/_workspace
 vendor/
+
+client/node_modules/
+client/npm-debug.log
+
 
