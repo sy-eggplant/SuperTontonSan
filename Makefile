@@ -3,7 +3,7 @@
 setup:
 	go get github.com/rubenv/sql-migrate/...
 	go get github.com/tools/godep
-	cd server && godep get
+	cd server && godep get ./...
 
 build:
 	cd server && godep go build -o cmd/main cmd/main.go
