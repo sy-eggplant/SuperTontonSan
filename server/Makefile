@@ -4,7 +4,7 @@ ENV:=development
 setup:
 	go get github.com/rubenv/sql-migrate/...
 	go get github.com/tools/godep
-	godep get
+	godep get ./...
 
 build:
 	godep go build -o cmd/main cmd/main.go
