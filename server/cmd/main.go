@@ -1,7 +1,8 @@
 package main
 
-import "fmt"
+import server "github.com/sy-eggplant/SuperTontonSan/server"
 
 func main() {
-	fmt.Println("vim-go")
+	server.Run()
+
 }
