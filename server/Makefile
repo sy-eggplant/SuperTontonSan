@@ -10,6 +10,7 @@ build:
 	godep go build -o cmd/main cmd/main.go
 
 run:
+	godep go build -o cmd/main cmd/main.go
 	./cmd/main
 
 test:
