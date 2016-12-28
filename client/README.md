@@ -2,15 +2,22 @@
 
 ## 使用技術
 
- - npm
+ - yarn
  - React
+ - Redux
 
 ## 環境構築
 
-npmが動く前提
+yarnのインストール
 
+```sh
+brew install yarn
 ```
-npm install
+
+をしてから
+
+```sh
+yarn install
 ```
 
 で依存パッケージのインストール
@@ -18,11 +25,7 @@ npm install
 ## run
 
 ```sh
-npm run dev
+yarn start
 ```
 
-してから
 
-[http://localhost:8080/webpack-dev-server/dist/index.html](http://localhost:8080/webpack-dev-server/dist/index.html)
-
-を見る
