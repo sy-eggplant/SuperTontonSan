@@ -5,6 +5,7 @@ import * as actions from "../actions";
 
 import ScheduleRow from "../components/ScheduleRow"
 import NewUser from "../components/NewUser"
+import TableColumn from "../components/TableColumn"
 
 const style = {
   table: {
@@ -18,14 +19,10 @@ class ScheduleContainer extends Component {
     return (
       <div>
 				<table style={style.table}>
-					<tr>
-						<th>NAME</th>
-						<th>1/1</th>
-						<th>1/2</th>
-						<th>1/3</th>
-						<th>1/4</th>
-					</tr>
-					<ScheduleRow name={ "glacier" } schedules={[true, false, false, true]}/>	
+					<TableColumn dates={schedule.table.dates} />
+					{schedule.table.names.map((e) => {
+        return <ScheduleRow name={e} schedules={schedule.table.schedules[e]}/>
+      })}
 					<NewUser onClick={() => actions.onNewUserClick }/>
 				</table>
 			</div>

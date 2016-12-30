@@ -3,7 +3,7 @@ import * as actionTypes from "../utils/actionTypes";
 const initialState = {
   table: {
     names: ["glacier", "hoge", "fuga"],
-    dates: ["1/1", "1/2", "1/3", "1/4"],
+    dates: ["1/1", "1/2", "1/3", "1/10"],
     schedules: {
       "glacier": [true, false, true, false],
       "hoge": [false, false, true, false],
