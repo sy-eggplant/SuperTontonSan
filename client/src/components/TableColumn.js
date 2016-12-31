@@ -1,13 +1,18 @@
 import React, { PropTypes } from "react"
 
-const TableColumn = ({dates}) => (
-  <tr>
-		<th>Name</th>
-		{ dates.map((date) => {
-    return <th>{date}</th>
-  })}
-	</tr>
-);
+const TableColumn = ({dates}) => {
+  var datesColumn = [];
+  dates.forEach((date) => {
+    datesColumn.push(<th>{date}</th>);
+  })
+
+  return (
+    <tr>
+			<th>Name</th>
+			{ datesColumn }
+		</tr>
+    );
+};
 
 TableColumn.PropTypes = {
   dates: PropTypes.array.isRequired,

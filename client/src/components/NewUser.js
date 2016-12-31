@@ -6,7 +6,7 @@ const NewUser = ({dates, actions}) => {
   dates.forEach((date, i) => {
     checkboxes.push(
       <td><input type="checkbox" id={i} ref={node => {
-        checkboxesValues[i] = node.checked
+        checkboxesValues[i] = false
       }}
       onClick={() => {
         checkboxesValues[i] = checkboxesValues[i] ? false : true
