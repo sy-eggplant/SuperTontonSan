@@ -16,14 +16,18 @@ const style = {
 class ScheduleContainer extends Component {
   render() {
     const {schedule, actions} = this.props;
+
+    var scheduleRows = [];
+    schedule.table.names.forEach((e) => {
+      scheduleRows.push(<ScheduleRow name={e} schedules={schedule.table.schedules[e]}/>);
+    })
+
     return (
       <div>
 				<table style={style.table}>
 					<TableColumn dates={schedule.table.dates} />
-					{schedule.table.names.map((e) => {
-        return <ScheduleRow name={e} schedules={schedule.table.schedules[e]}/>
-      })}
-					<NewUser onClick={() => actions.onNewUserClick }/>
+					{ scheduleRows }	
+					<NewUser dates={schedule.table.dates} actions={actions}/>
 				</table>
 			</div>
       );

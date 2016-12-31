@@ -1,13 +1,18 @@
 import React, { PropTypes } from "react"
 
-const ScheduleRow = ({name, schedules}) => (
-  <tr>
-		<td>{ name }</td>
-		{ schedules.map((e) => {
-    return <td>{e ? "o" : "x"}</td>
-  })}
-	</tr>
-);
+const ScheduleRow = ({name, schedules}) => {
+  var schedule = [];
+  schedules.forEach((e) => {
+    schedule.push(<td>{e ? "o" : "x"}</td>);
+  })
+
+  return (
+    <tr>
+			<td>{ name }</td>
+			{ schedule }
+		</tr>
+    );
+};
 
 ScheduleRow.PropTypes = {
   name: PropTypes.string.isRequired,
