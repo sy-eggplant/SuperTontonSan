@@ -10,12 +10,27 @@ const initialState = {
       "fuga": [true, true, true, false],
     },
   },
+  dates: ["1/1", "1/2", "1/3", "1/10"],
+  users: [
+    {
+      id: 0,
+      name: "glacier",
+      schedule: [true, false, false, true],
+    },
+    {
+      id: 1,
+      name: "hyoga",
+      schedule: [true, true, false, true],
+    },
+  ],
 };
 
 const schedule = (state = initialState, action) => {
   if (action.type === actionTypes.NEW_USER) {
-    state.table.schedules[action.name] = action.schedule
-    state.table.names.push(action.name)
+    state.users.push({
+      name: action.name,
+      schedule: action.schedule,
+    })
     return {
       ...state,
     };

@@ -18,16 +18,16 @@ class ScheduleContainer extends Component {
     const {schedule, actions} = this.props;
 
     var scheduleRows = [];
-    schedule.table.names.forEach((e) => {
-      scheduleRows.push(<ScheduleRow name={e} schedules={schedule.table.schedules[e]}/>);
+    schedule.users.forEach((user) => {
+      scheduleRows.push(<ScheduleRow user={user} dates={schedule.dates}/>);
     })
 
     return (
       <div>
 				<table style={style.table}>
-					<TableColumn dates={schedule.table.dates} />
+					<TableColumn dates={schedule.dates} />
 					{ scheduleRows }	
-					<NewUser dates={schedule.table.dates} actions={actions}/>
+					<NewUser dates={schedule.dates} actions={actions}/>
 				</table>
 			</div>
       );

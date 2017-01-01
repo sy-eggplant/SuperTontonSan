@@ -1,22 +1,22 @@
 import React, { PropTypes } from "react"
 
-const ScheduleRow = ({name, schedules}) => {
+const ScheduleRow = ({user, dates}) => {
   var schedule = [];
-  schedules.forEach((e) => {
+  user.schedule.forEach((e) => {
     schedule.push(<td>{e ? "o" : "x"}</td>);
   })
 
   return (
     <tr>
-			<td>{ name }</td>
+			<td>{ user.name }</td>
 			{ schedule }
 		</tr>
     );
 };
 
 ScheduleRow.PropTypes = {
-  name: PropTypes.string.isRequired,
-  schedules: PropTypes.array.isRequired,
+  user: PropTypes.object.isRequired,
+  dates: PropTypes.array.isRequired,
 };
 
 export default ScheduleRow
