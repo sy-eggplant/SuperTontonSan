@@ -1,6 +1,7 @@
 import React, { PropTypes } from "react"
+import DeleteBtn from "./DeleteBtn"
 
-const ScheduleRow = ({user, dates}) => {
+const ScheduleRow = ({user, dates, actions}) => {
   var schedule = [];
   user.schedule.forEach((e) => {
     schedule.push(<td>{e ? "o" : "x"}</td>);
@@ -8,8 +9,9 @@ const ScheduleRow = ({user, dates}) => {
 
   return (
     <tr>
-			<td>{ user.name }</td>
+			<td id={user.id} >{ user.name }</td>
 			{ schedule }
+			<td><DeleteBtn id={user.id} actions={actions}/></td>
 		</tr>
     );
 };

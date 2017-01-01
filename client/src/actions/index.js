@@ -5,3 +5,8 @@ export const onNewUserClick = (name, schedule) => ({
   name,
   schedule
 })
+
+export const onDeleteUserClick = (id) => ({
+  type: actionTypes.DELETE_USER,
+  id,
+})

@@ -1,15 +1,16 @@
 import React, { PropTypes } from "react"
 
-const NewUser = ({dates, actions}) => {
+const NewUser = ({userID, dates, actions}) => {
   var checkboxes = [];
   let checkboxesValues = [];
   dates.forEach((date, i) => {
     checkboxes.push(
-      <td><input type="checkbox" id={i} ref={node => {
+      <td><input type="checkbox" id={i}
+      ref={node => {
         checkboxesValues[i] = false
       }}
-      onClick={() => {
-        checkboxesValues[i] = checkboxesValues[i] ? false : true
+      onClick={(node) => {
+        checkboxesValues[i] = checkboxesValues[i] && userID === node.id ? false : true
       }} /></td>
     );
   })
@@ -30,6 +31,7 @@ const NewUser = ({dates, actions}) => {
 
 NewUser.PropTypes = {
   dates: PropTypes.array.isRequired,
+  userID: PropTypes.number.isRequired,
 };
 
 export default NewUser
