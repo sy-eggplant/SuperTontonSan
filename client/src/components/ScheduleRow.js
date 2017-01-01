@@ -2,9 +2,8 @@ import React, { PropTypes } from "react"
 import DeleteBtn from "./DeleteBtn"
 
 const ScheduleRow = ({user, dates, actions}) => {
-  var schedule = [];
-  user.schedule.forEach((e) => {
-    schedule.push(<td>{e ? "o" : "x"}</td>);
+  const schedule = user.schedule.map((e) => {
+    return <td>{e ? "o" : "x"}</td>
   })
 
   return (

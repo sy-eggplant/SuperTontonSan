@@ -1,9 +1,8 @@
 import React, { PropTypes } from "react"
 
 const TableColumn = ({dates}) => {
-  var datesColumn = [];
-  dates.forEach((date) => {
-    datesColumn.push(<th>{date}</th>);
+  const datesColumn = dates.map((date) => {
+    return <th>{date}</th>;
   })
 
   return (

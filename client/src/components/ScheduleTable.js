@@ -16,9 +16,8 @@ const ScheduleTable = ({schedule, actions}) => {
     return user.id
   }))
 
-  var scheduleRows = [];
-  schedule.users.forEach((user) => {
-    scheduleRows.push(<ScheduleRow user-id={maxID + 1} user={user} dates={schedule.dates} actions={actions}/>);
+  const scheduleRows = schedule.users.map((user) => {
+    return (<ScheduleRow user-id={maxID + 1} user={user} dates={schedule.dates} actions={actions}/>);
   })
 
   return (

@@ -1,10 +1,9 @@
 import React, { PropTypes } from "react"
 
 const NewUser = ({userID, dates, actions}) => {
-  var checkboxes = [];
   let checkboxesValues = [];
-  dates.forEach((date, i) => {
-    checkboxes.push(
+  const checkboxes = dates.map((date, i) => {
+    return (
       <td><input type="checkbox" id={i}
       ref={node => {
         checkboxesValues[i] = false
@@ -12,7 +11,7 @@ const NewUser = ({userID, dates, actions}) => {
       onClick={(node) => {
         checkboxesValues[i] = checkboxesValues[i] && userID === node.id ? false : true
       }} /></td>
-    );
+      );
   })
 
   let input;
