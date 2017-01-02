@@ -1,6 +1,11 @@
-package server
+package main
 
 import "github.com/gin-gonic/gin"
+
+func main(){
+	Run()
+}
+
 
 func Run() {
 	r := gin.Default()
