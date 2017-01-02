@@ -1,35 +1,20 @@
 {
-	"name": "client",
-	"version": "1.0.0",
-	"description": "幹事を助けるapp(web side)",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "./node_modules/.bin/webpack-dev-server --progress --colors --hot"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/sy-eggplant/SuperTontonSan.git"
-	},
-	"author": "",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/sy-eggplant/SuperTontonSan/issues"
-	},
-	"homepage": "https://github.com/sy-eggplant/SuperTontonSan#readme",
-	"dependencies": {
-		"react": "^15.4.1",
-		"react-dom": "^15.4.1"
-	},
-	"devDependencies": {
-		"babel-core": "^6.21.0",
-		"babel-loader": "^6.2.10",
-		"babel-preset-es2015": "^6.18.0",
-		"babel-preset-react": "^6.16.0",
-		"esformatter": "^0.10.0",
-		"esformatter-jsx": "^7.4.0",
-		"esformatter-jsx-ignore": "^1.0.6",
-		"webpack": "^1.14.0",
-		"webpack-dev-server": "^1.16.2"
-	}
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.8.4"
+  },
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }
