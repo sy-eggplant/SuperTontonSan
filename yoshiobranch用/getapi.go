@@ -25,9 +25,10 @@ func main(){
     defer stmtOut.Close()
 
     err = stmtOut.QueryRow(17).Scan(&name)
-
-    fmt.Println(ids)
-    fmt.Println(name)
+    c.JSON(200,gin.H{
+      "ID":ids,
+      "UserName":name,
+    })
 
     })
 
