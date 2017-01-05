@@ -17,7 +17,7 @@ func main(){
       c.Bind(tmp)
       c.JSON(200,gin.H{
         "name": tmp.Name,
-        "mails": tmp.Mail,
+        "mail": tmp.Mail,
       })
           //データベースに接続
           db, err := sql.Open("mysql", "root:admin@/SuperTontonSan")
