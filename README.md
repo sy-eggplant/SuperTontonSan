@@ -17,3 +17,11 @@ make setup
 ```sh
 make build
 ```
+
+##yoshiobranch用でtestコードなど
+1.yoshiobranch用に移動
+2.DBが存在している前提で
+3.go run postapi.go
+4.curl -X POST -H 'Content-Type: application/json' -d '{"name":"名前","mail":"アドレス"}' http://localhost:8080/
+
+jsonで送信してjsonで返ってくる。DBにも挿入されている。
