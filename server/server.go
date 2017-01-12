@@ -2,11 +2,11 @@ package server
 
 import (
 	"database/sql"
-	"fmt"
 	"net/http"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
+	"github.com/sy-eggplant/SuperTontonSan/server/model"
 )
 
 func Run() error {
@@ -21,7 +21,6 @@ func Run() error {
 		var i = c.Param("id")
 		var ids int
 		ids, _ = strconv.Atoi(i)
-		fmt.Println(ids)
 		var name string
 
 		db, err := sql.Open("mysql", "root:password@/supertontonsan")
@@ -39,13 +38,27 @@ func Run() error {
 		})
 	})
 
+	r.POST("/api/user", func(c *gin.Context) {
+		var tmp = model.User{}
+		c.Bind(tmp)
+		c.JSON(200, gin.H{
+			"name": tmp.Name,
+			"mail": tmp.Mail,
+		})
+		//データベースに接続
+		db, err := sql.Open("mysql", "root:admin@/SuperTontonSan")
+		c.JSON(http.StatusInternalServerError, err)
+		//データの挿入
+		// stmt, err := db.Prepare("INSERT users SET user_name=? mail=?")
+		stmt, err := db.Prepare("INSERT users SET user_name=?,mail=?")
+		c.JSON(http.StatusInternalServerError, err)
+		res, err := stmt.Exec(tmp.Name, tmp.Mail)
+		c.JSON(http.StatusInternalServerError, err)
+		_, err = res.LastInsertId()
+		c.JSON(http.StatusInternalServerError, err)
+	})
+
 	r.Run()
 
 	return nil
-}
-
-func checkErr(err error) {
-	if err != nil {
-		panic(err)
-	}
 }
